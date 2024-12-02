@@ -3,13 +3,20 @@ import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 
 
-function ActiveStreaks() {
+interface ActiveStreaksProps {
+    title: string;
+    data: {
+        name: string;
+        count: string;
+    }
+}
+
+function ActiveStreaks({ title, data }: ActiveStreaksProps) {
     const openWindow = () => {
         console.log('active-streaks page is click');
 
     }
-    const name: string = 'active-streaks'
-    const count: string = '3/4'
+
 
     return (
         <>
@@ -20,8 +27,8 @@ function ActiveStreaks() {
                     overflow: 'hidden'
                 }}>
                     <Card variant="outlined">
-                        <h3>{name}</h3>
-                        <h2 className='count'>{count}</h2>
+                        <h3>{data.name}</h3>
+                        <h2 className='count'>{data.count}</h2>
                     </Card>
                 </Box>
 
