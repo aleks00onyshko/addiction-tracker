@@ -2,9 +2,10 @@
 import React from 'react';
 import { Cigarette, Wine, Coffee, Cookie, Cannabis, Gamepad, Phone, DollarSign } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
-import {Addiction, AddictionType} from "../../models/addiction.ts";
+import { Addiction, AddictionType } from "../../models/addiction.ts";
 import Card from "@mui/material/Card";
-import {CardContent} from "@mui/material";
+import { CardContent } from "@mui/material";
+
 
 const ADDICTION_ICONS = {
     [AddictionType.NICOTINE]: Cigarette,
@@ -26,12 +27,14 @@ const AddictionCard = ({ addiction, onCheckIn }: AddictionCardProps) => {
     const IconComponent = ADDICTION_ICONS[addiction.type];
 
     return (
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="hover:shadow-lg transition-shadow w-full mt-5">
             <CardContent className="p-4">
                 {/* Header with icon and check-in button */}
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-lg bg-${addiction.status}-100`}>
+                        <div style={{
+                            backgroundColor: 'rgba(144, 238, 144, 0.5)', // прозорий салатовий
+                        }} className={`p-2 rounded-lg bg-${addiction.status}-100`}>
                             <IconComponent className={`w-6 h-6 text-${addiction.status}-500`} />
                         </div>
                         <h3 className="text-lg font-semibold">{addiction.name}</h3>

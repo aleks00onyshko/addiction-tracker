@@ -1,4 +1,5 @@
 .header {
+    position: fixed;
     background-color: aliceblue;
     width: 100%;
     height: 5rem;
@@ -15,9 +16,13 @@
 
 }
 
-h2 {
+.header-titile {
+    font-weight: 900;
     margin-left: 10rem;
+    font-size: 2rem;
     color: blue;
+    display: flex;
+    align-items: center;
 }
 
 .notification-btn {}

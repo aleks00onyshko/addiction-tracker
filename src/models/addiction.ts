@@ -4,7 +4,7 @@ export enum AddictionType {
     SUGAR = 'sugar',
     CANNABIS = 'cannabis',
     CAFFEINE = 'caffeine',
-     GAMBLING = 'gambling',
+    GAMBLING = 'gambling',
     SOCIAL_MEDIA = 'social_media',
     VIDEO_GAMES = 'video_games'
 }
@@ -18,10 +18,10 @@ export enum AddictionStatus {
 export interface Addiction {
     id: string;
     name: string;          // e.g., "Nicotine", "Alcohol"
-    type: AddictionType;          // for icon selection
+    type: AddictionType;   // for icon selection
     startDate: Date;       // when tracking began
     currentStreak: number; // current streak in days
     lastCheckIn: Date;     // last activity timestamp
-    status:AddictionStatus;  // current status
+    status: AddictionStatus;  // current status
     moneySaved: number;    // calculated savings
 }
