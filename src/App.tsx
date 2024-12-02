@@ -1,13 +1,15 @@
 
 import './App.css'
-import Header from './components/header'
+import ActiveStreaks from './components/active-streaks/Active-streaks'
+import Header from './components/header/header'
 
 function App() {
   return (
     <>
-      <Header />
 
       <div className='body'>
+        <Header />
+        <ActiveStreaks />
       </div>
     </>
   )

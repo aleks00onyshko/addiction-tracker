@@ -1,0 +1,16 @@
+    .active-streaks{
+        width: 80%;
+        margin: 1rem;
+
+    }
+    h3{
+        font-size: 20px;
+        font-weight: 500;
+        color: grey;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0 0 0 10px ;
+    }
+    .count{
+        color: black;
+        margin: 0.5rem 0.5rem 0.5rem 10px ;
+    }
