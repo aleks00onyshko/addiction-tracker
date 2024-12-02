@@ -2,7 +2,7 @@ import './App.css'
 import ActiveStreaks from './components/active-streaks/Active-streaks'
 import Header from './components/header/header'
 import AddictionCard from './components/addiction-card/addiction-card.tsx';
-import {AddictionStatus, AddictionType} from "./models/addiction.ts";
+import { Addiction, AddictionStatus, AddictionType } from "./models/addiction.ts";
 
 function App() {
   const data = {
@@ -20,16 +20,39 @@ function App() {
     }
   }
 
-  const sampleAddiction: Addiction = {
-    id: '1',
-    name: 'Quit Smoking',
-    type: AddictionType.NICOTINE,
-    startDate: new Date(2024, 0, 1),  // January 1, 2024
-    currentStreak: 7,
-    lastCheckIn: new Date(),  // current date/time
-    status: AddictionStatus.GOOD,
-    moneySaved: 84
-  };
+  const sampleAddictions: Addiction[] = [
+    {
+      id: '1',
+      name: 'Quit Smoking',
+      type: AddictionType.NICOTINE,
+      startDate: new Date(2024, 0, 1), // January 1, 2024
+      currentStreak: 7,
+      lastCheckIn: new Date(),
+      status: AddictionStatus.GOOD,
+      moneySaved: 84
+    },
+    {
+      id: '2',
+      name: 'Limit Alcohol',
+      type: AddictionType.ALCOHOL,
+      startDate: new Date(2024, 0, 15), // January 15, 2024
+      currentStreak: 15,
+      lastCheckIn: new Date(),
+      status: AddictionStatus.WARNING,
+      moneySaved: 45
+    },
+    {
+      id: '3',
+      name: 'Reduce Sugar',
+      type: AddictionType.SUGAR,
+      startDate: new Date(2023, 11, 1), // December 1, 2023
+      currentStreak: 30,
+      lastCheckIn: new Date(),
+      status: AddictionStatus.GOOD,
+      moneySaved: 20
+    }
+  ];
+
 
   const handleCheckIn = (id: string) => {
     console.log('Checking in for addiction:', id);
@@ -39,30 +62,44 @@ function App() {
   return (
     <>
       <div className='body'>
-        <Header />
-        <div className='title'>
-          <h1>Today's Overview</h1>
+        <div className='header'>
+          <Header />
         </div>
 
-        <ActiveStreaks
-          title="Active Streaks"
-          data={data['Active Streaks']}
-        />
-        <ActiveStreaks
-          title="Total Money"
-          data={data['Total Money']}
-        />
-        <ActiveStreaks
-          title="Next Milestone"
-          data={data['Next Milestone']}
-        />
+        <div className='active-streaks'>
+          <div className='active-streaks-title'>
+            <h1>Today's Overview</h1>
+          </div>
+
+          <ActiveStreaks
+            data={data['Active Streaks']}
+          />
+          <ActiveStreaks
+            data={data['Total Money']}
+          />
+          <ActiveStreaks
+            data={data['Next Milestone']}
+          />
+        </div>
+
+
+        <div className='additional-cards'>
+          {sampleAddictions.map((addiction) => (
+            <AddictionCard
+              key={addiction.id}
+              addiction={addiction}
+              onCheckIn={handleCheckIn}
+            />
+          ))}
+        </div>
+
+
+
+
+
       </div>
 
 
-      <AddictionCard
-          addiction={sampleAddiction}
-          onCheckIn={handleCheckIn}
-      />
 
     </>
   )

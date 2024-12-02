@@ -2,11 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-.body{
+.body {
   display: flex !important;
   flex-direction: column;
   align-items: center;
+  padding-right: 10rem;
+  padding-left: 10rem;
 }
-.title{
+
+.title {
   width: 80%;
+}
+
+.active-streaks {
+  width: 100%;
+  margin-top: 7rem;
+}
+
+.active-streaks-title h1{
+  font-size: 2rem;
+  color: black;
+  font-weight: 700;
+}
+
+.additional-cards{
+  margin-top: 3rem;
+  width: 100%;
 }

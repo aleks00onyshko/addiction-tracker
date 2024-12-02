@@ -26,7 +26,7 @@ function Header() {
     return (
         <>
             <div className='header'>
-                <h2>Recovery Tracker</h2>
+                <h2 className='header-titile'>Recovery Tracker</h2>
                 <div className='navigation'>
                     <IconButton onClick={mailClick} className='notification-btn'>
                         <Badge badgeContent={100} color="secondary">
