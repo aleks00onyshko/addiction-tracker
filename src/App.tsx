@@ -1,6 +1,8 @@
 import './App.css'
 import ActiveStreaks from './components/active-streaks/Active-streaks'
 import Header from './components/header/header'
+import AddictionCard from './components/addiction-card/addiction-card.tsx';
+import {AddictionStatus, AddictionType} from "./models/addiction.ts";
 
 function App() {
   const data = {
@@ -17,6 +19,22 @@ function App() {
       count: '2 days to 1 month'
     }
   }
+
+  const sampleAddiction: Addiction = {
+    id: '1',
+    name: 'Quit Smoking',
+    type: AddictionType.NICOTINE,
+    startDate: new Date(2024, 0, 1),  // January 1, 2024
+    currentStreak: 7,
+    lastCheckIn: new Date(),  // current date/time
+    status: AddictionStatus.GOOD,
+    moneySaved: 84
+  };
+
+  const handleCheckIn = (id: string) => {
+    console.log('Checking in for addiction:', id);
+    // Add your check-in logic here
+  };
 
   return (
     <>
@@ -39,6 +57,13 @@ function App() {
           data={data['Next Milestone']}
         />
       </div>
+
+
+      <AddictionCard
+          addiction={sampleAddiction}
+          onCheckIn={handleCheckIn}
+      />
+
     </>
   )
 }
