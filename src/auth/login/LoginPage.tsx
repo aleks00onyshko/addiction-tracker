@@ -7,7 +7,7 @@ import { AuthContext } from "../auth";
 
 const LoginPage = () => {
     const auth = getAuth(app);
-    const { setUser } = useContext(AuthContext)!; // Використовуємо контекст
+    const { setUser } = useContext(AuthContext)!;
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 

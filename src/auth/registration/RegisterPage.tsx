@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Lock, User } from 'lucide-react';
+import { Mail, Lock } from 'lucide-react';
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from '../../db/firebase/firebase';
 
