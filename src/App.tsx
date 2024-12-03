@@ -2,6 +2,7 @@ import AuthProvider from "./auth/auth.tsx";
 import ActiveStreaks from "./components/active-streaks/Active-streaks";
 import AddictionCard from "./components/addiction-card/addiction-card";
 import Header from "./components/header/header";
+import './App.css'
 import { Addiction, AddictionType, AddictionStatus } from "./models/addiction";
 
 function App() {
@@ -60,11 +61,10 @@ function App() {
 
   return (
     <AuthProvider>
-      <div className='body'>
-        <div className='header'>
-          <Header />
-        </div>
-
+      <div className='header'>
+        <Header />
+      </div>
+      <div className='main-body'>
         <div className='active-streaks'>
           <div className='active-streaks-title'>
             <h1>Today's Overview</h1>
@@ -86,6 +86,7 @@ function App() {
         </div>
       </div>
     </AuthProvider>
+
   );
 }
 

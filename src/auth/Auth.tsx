@@ -33,15 +33,10 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             .catch(error => console.error("Registration error:", error));
     };
 
-    const handleLogout = () => {
-        signOut(auth)
-            .then(() => setUser(null))
-            .catch(error => console.error("Logout error:", error));
-    };
 
     if (!user) {
         return (
-            <div>
+            <div className="login-page">
                 <h1>Authentication Required</h1>
                 <input
                     type="email"
@@ -64,10 +59,6 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <p>Welcome, {user.displayName || "User"}!</p>
-                <button onClick={handleLogout}>Logout</button>
-            </div>
             {children}
         </div>
     );

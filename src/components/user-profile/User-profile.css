@@ -1,0 +1,125 @@
+.profile-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-modal {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.profile-photo {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.change-photo-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #3B82F6;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+
+.profile-info {
+    margin-bottom: 24px;
+}
+
+.info-field {
+    margin-bottom: 16px;
+}
+
+.info-field label {
+    display: block;
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.info-field p {
+    padding: 8px;
+    color: black;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    margin: 0;
+}
+
+.profile-actions {
+    display: flex;
+     gap: 5rem;
+}
+
+.change-password-btn,
+.logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.change-password-btn {
+    background: #3B82F6;
+    color: white;
+    flex: 2;
+
+}
+
+.logout-btn {
+    background: #EF4444;
+    color: white;
+    flex: 1;
+}
+.profile-modal-header{
+    width: 100%;    
+    display: flex;
+    justify-content: flex-end;
+}
+.close-btn{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: #EF4444;
+}
