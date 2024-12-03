@@ -1,8 +1,9 @@
+import AuthProvider from "./auth/auth.tsx";
+import ActiveStreaks from "./components/active-streaks/Active-streaks";
+import AddictionCard from "./components/addiction-card/addiction-card";
+import Header from "./components/header/header";
 import './App.css'
-import ActiveStreaks from './components/active-streaks/Active-streaks'
-import Header from './components/header/header'
-import AddictionCard from './components/addiction-card/addiction-card.tsx';
-import { Addiction, AddictionStatus, AddictionType } from "./models/addiction.ts";
+import { Addiction, AddictionType, AddictionStatus } from "./models/addiction";
 
 function App() {
   const data = {
@@ -18,7 +19,7 @@ function App() {
       name: 'next-milestone',
       count: '2 days to 1 month'
     }
-  }
+  };
 
   const sampleAddictions: Addiction[] = [
     {
@@ -53,35 +54,26 @@ function App() {
     }
   ];
 
-
   const handleCheckIn = (id: string) => {
     console.log('Checking in for addiction:', id);
     // Add your check-in logic here
   };
 
   return (
-    <>
-      <div className='body'>
-        <div className='header'>
-          <Header />
-        </div>
-
+    <AuthProvider>
+      <div className='header'>
+        <Header />
+      </div>
+      <div className='main-body'>
         <div className='active-streaks'>
           <div className='active-streaks-title'>
             <h1>Today's Overview</h1>
           </div>
 
-          <ActiveStreaks
-            data={data['Active Streaks']}
-          />
-          <ActiveStreaks
-            data={data['Total Money']}
-          />
-          <ActiveStreaks
-            data={data['Next Milestone']}
-          />
+          <ActiveStreaks data={data['Active Streaks']} />
+          <ActiveStreaks data={data['Total Money']} />
+          <ActiveStreaks data={data['Next Milestone']} />
         </div>
-
 
         <div className='additional-cards'>
           {sampleAddictions.map((addiction) => (
@@ -92,17 +84,10 @@ function App() {
             />
           ))}
         </div>
-
-
-
-
-
       </div>
+    </AuthProvider>
 
-
-
-    </>
-  )
+  );
 }
 
-export default App
+export default App;

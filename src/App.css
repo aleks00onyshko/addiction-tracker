@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.body {
+.main-body {
   display: flex !important;
   flex-direction: column;
   align-items: center;
   padding-right: 10rem;
   padding-left: 10rem;
+  /* width: 80%; */
 }
 
 .title {
@@ -16,7 +17,10 @@
 
 .active-streaks {
   width: 100%;
-  margin-top: 7rem;
+}
+
+.active-streaks-title{
+  top: 3rem;
 }
 
 .active-streaks-title h1{
